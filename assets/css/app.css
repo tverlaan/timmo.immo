@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./phoenix.css";
+
+@import "../node_modules/nprogress/nprogress.css";
+
+@layer components {
+  .icon-link {
+    @apply stroke-current stroke-2 h-5 w-5 text-gray-700;
+  }
+  @screen md {
+    .icon-link {
+      @apply h-6 w-6;
+    }
+  }
+  .icon-link:hover {
+    @apply text-gray-900
+  }
+}

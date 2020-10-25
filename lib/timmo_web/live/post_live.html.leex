@@ -1,0 +1,12 @@
+<article class="space-y-4">
+  <header class="flex flex-col">
+    <h1 class="text-brand text-2xl"><%= @post.title %></h1>
+    <div class="flex justify-between">
+      <p class="text-gray-600 text-sm"><%= @post.date %></p>
+      <%# <p class="text-gray-800 text-sm"><%= Enum.join(@post.tags, ", ") </p> %>
+    </div>
+  </header>
+  <section class="prose prose-lg md:prose-xl">
+    <%= raw(@post.body) %>
+  </section>
+</article>

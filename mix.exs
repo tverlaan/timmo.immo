@@ -42,7 +42,7 @@ defmodule Timmo.MixProject do
       {:nimble_publisher, "~> 0.1.1"},
       {:makeup_elixir, ">= 0.0.0"},
       {:makeup_erlang, ">= 0.0.0"},
-      {:credo, "~> 1.4"}
+      {:credo, "~> 1.4", only: :dev}
     ]
   end
 

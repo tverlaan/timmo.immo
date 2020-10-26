@@ -4,7 +4,7 @@ use Mix.Config
 config :timmo, Timmo.Repo,
   username: "postgres",
   password: "postgres",
-  database: "timmo_dev",
+  database: "timmo",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10

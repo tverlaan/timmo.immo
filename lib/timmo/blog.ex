@@ -1,8 +1,9 @@
 defmodule Timmo.Blog do
   @moduledoc false
+  @posts_path "priv/posts"
   use NimblePublisher,
     build: Timmo.Blog.Post,
-    from: "priv/posts/*.md",
+    from: "#{@posts_path}/*.md",
     as: :posts,
     highlighters: [:makeup_elixir]
 
@@ -28,4 +29,6 @@ defmodule Timmo.Blog do
       &(&1.id == id)
     )
   end
+
+  def path, do: @posts_path
 end

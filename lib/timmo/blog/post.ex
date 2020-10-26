@@ -14,4 +14,32 @@ defmodule Timmo.Blog.Post do
     date = Date.from_iso8601!("#{year}-#{month}-#{day}")
     struct!(__MODULE__, [id: id, date: date, body: body] ++ Map.to_list(attrs))
   end
+
+  def new(title) do
+    date = Date.utc_today() |> Date.to_string() |> String.replace("-", "")
+    id = String.downcase(title) |> String.replace(" ", "-")
+    filename = "#{Timmo.Blog.path()}/#{date}-#{id}.md"
+
+    case File.stat(filename) do
+      {:ok, _} ->
+        {:error, "post with date=#{date} and id=#{id} already exists"}
+
+      _ ->
+        File.write!(filename, template(title))
+        {:ok, "post created at #{filename}"}
+    end
+  end
+
+  defp template(title) do
+    """
+    %{
+      author: "Timmo Verlaan",
+      title: "#{title}",
+      tags: [],
+      description: ""
+    }
+
+    ---
+    """
+  end
 end

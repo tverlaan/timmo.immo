@@ -1,6 +1,6 @@
-<article class="space-y-4">
-  <header class="flex flex-col">
-    <h1 class="text-brand text-2xl"><%= @post.title %></h1>
+<article role="article" class="space-y-4">
+  <header role="heading" class="flex flex-col">
+    <h1 class="text-brand text-xl md:text-3xl lg:text-4xl font-semibold"><%= @post.title %></h1>
     <div class="flex justify-between">
       <p class="text-gray-600 text-sm"><%= @post.date %></p>
       <%# <p class="text-gray-800 text-sm"><%= Enum.join(@post.tags, ", ") </p> %>

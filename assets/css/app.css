@@ -4,7 +4,7 @@
 
 @import "./phoenix.css";
 
-@import "../node_modules/nprogress/nprogress.css";
+@import "../node_modules/accessible-nprogress/dist/accessible-nprogress.css";
 
 @layer components {
   .icon-link {

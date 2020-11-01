@@ -33,6 +33,18 @@ module.exports = {
         css: {
           'h1, h2, h3, h4, h5, h6': { color: theme('colors.brand') }
         }
+      },
+      lg: {
+        css: {
+          h2: { fontSize: '1.25em' },
+          h3: { fontSize: '1.125em' }
+        }
+      },
+      xl: {
+        css: {
+          h2: { fontSize: '1.25em' },
+          h3: { fontSize: '1.125em' }
+        }
       }
     })
   },

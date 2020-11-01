@@ -1,15 +1,15 @@
 <%= for post <- @posts do %>
   <article role="article" class="space-y-2 pb-2 border-b">
-    <header class="flex flex-col">
-      <h1 class="text-brand text-xl md:text-4xl font-bold">
+    <header>
+      <h1 class="text-brand text-2xl md:text-4xl font-bold">
         <%= live_redirect post.title, to: Routes.post_path(@socket, :show, post.id), class: "hover:text-golden-600" %>
       </h1>
-      <div class="flex flex-row justify-between">
-        <p class="text-gray-600 text-sm"><%= post.date %></p>
-        <%# <p class="text-gray-800 text-sm"><%= Enum.join(post.tags, ", ")</p> %>
-      </div>
     </header>
-    <section class="prose lg:prose-lg">
+    <div class="flex justify-between">
+      <p class="text-gray-600 text-sm"><%= post.date %></p>
+      <%# <p class="text-gray-800 text-sm"><%= Enum.join(post.tags, ", ")</p> %>
+    </div>
+    <section class="prose md:prose-lg">
       <p><%= post.description %></p>
     </section>
   </article>

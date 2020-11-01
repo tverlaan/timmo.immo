@@ -15,7 +15,7 @@
     <div class="mx-auto px-4 py-6 md:py-10 max-w-4xl xl:max-w-5xl">
       <header>
         <div class="flex items-center justify-between">
-          <div class="text-brand text-xl md:text-3xl lg:text-4xl">
+          <div class="text-brand text-2xl md:text-4xl">
             <%= live_redirect "TIMMO VERLAAN", to: Routes.page_path(@conn, :index), class: "hover:text-golden-600" %>
             <%= if function_exported?(Routes, :live_dashboard_path, 2),
               do: link ".", to: Routes.live_dashboard_path(@conn, :home), class: "hidden md:inline hover:text-golden-600" %>

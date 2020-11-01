@@ -77,9 +77,9 @@
         #
         {Credo.Check.Design.AliasUsage,
          [
-           priority: :low,
+           priority: :normal,
            if_nested_deeper_than: 2,
-           if_called_more_often_than: 0,
+           if_called_more_often_than: 1,
            excluded_lastnames: ["Sandbox"]
          ]},
         # You can also customize the exit_status of each check.

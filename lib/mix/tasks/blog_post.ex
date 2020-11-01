@@ -1,4 +1,5 @@
 defmodule Mix.Tasks.Blog.Post do
+  @moduledoc false
   use Mix.Task
 
   @shortdoc "Generate new blog post"

@@ -19,10 +19,18 @@ secret_key_base =
     You can generate one by calling: mix phx.gen.secret
     """
 
+origins =
+  [
+    "https://timmo.immo",
+    System.get_env("HOST_ORIGIN")
+  ]
+  |> Enum.reject(&is_nil/1)
+
 config :timmo, TimmoWeb.Endpoint,
   http: [
     port: String.to_integer(System.get_env("PORT") || "4000"),
     transport_options: [socket_opts: [:inet6]]
   ],
   url: [host: "timmo.immo", port: 4000],
-  secret_key_base: secret_key_base
+  secret_key_base: secret_key_base,
+  check_origin: origins

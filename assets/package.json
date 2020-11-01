@@ -3,11 +3,11 @@
   "description": " ",
   "license": "MIT",
   "scripts": {
-    "build:css": "postcss css/app.css -v -o ../priv/static/css/app.css",
+    "build:css": "postcss css/app.css --verbose -o ../priv/static/css/app.css",
     "watch:css": "postcss css/app.css -o ../priv/static/css/app.css -w",
     "build:js": "webpack --mode development",
     "watch:js": "webpack --mode development --watch",
-    "deploy": "NODE_ENV=production webpack --mode production && NODE_ENV=production postcss css/app.css -v -o ../priv/static/css/app.css"
+    "deploy": "NODE_ENV=production webpack --mode production && NODE_ENV=production postcss css/app.css --verbose -o ../priv/static/css/app.css"
   },
   "dependencies": {
     "accessible-nprogress": "^2.0.0",

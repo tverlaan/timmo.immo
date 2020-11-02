@@ -2,7 +2,7 @@
   author: "Timmo Verlaan",
   title: "Setting up My Blog as Procrastination for Writing",
   tags: ["meta", "elixir", "tailwind"],
-  description: "I've been meaning to setup my blog for about three years. This time around I decided to push through and instead of delaying my writing even more, use it as a force. Once it's up and published I no longer have to configure it, make it look a specific way, figure out some new tooling, it's already there."
+  description: "I've been meaning to setup my blog for about three years. This time around I decided to push through and instead of delaying my writing even more, use it as a force. Once it's up and published I no longer have to configure it, make it look a specific way, figure out some new tooling, it's already there. Ready to publish."
 }
 
 ---

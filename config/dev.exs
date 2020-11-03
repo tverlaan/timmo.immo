@@ -62,8 +62,8 @@ config :timmo, TimmoWeb.Endpoint,
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"lib/timmo_web/(live|views)/.*(ex)$",
       ~r"lib/timmo_web/templates/.*(eex)$",
-      ~r"posts/*/.*(md)$",
-      ~r"pages/.*(md)$"
+      ~r"priv/posts/.*(md)$",
+      ~r"priv/pages/.*(md)$"
     ]
   ]
 

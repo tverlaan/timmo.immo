@@ -10,6 +10,16 @@ defmodule TimmoWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :not_browser do
+    plug :accepts, ["xml"]
+  end
+
+  scope "/", TimmoWeb do
+    pipe_through :not_browser
+
+    get "/feed", SiteController, :feed
+  end
+
   scope "/", TimmoWeb do
     pipe_through :browser
 

@@ -1,6 +1,7 @@
 defmodule Timmo.Blog do
   @moduledoc false
   @posts_path "priv/posts"
+  @build_time DateTime.now!("Europe/Amsterdam")
   use NimblePublisher,
     build: Timmo.Blog.Post,
     from: "#{@posts_path}/*.md",
@@ -31,4 +32,6 @@ defmodule Timmo.Blog do
   end
 
   def path, do: @posts_path
+
+  def build_time, do: @build_time
 end

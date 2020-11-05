@@ -6,15 +6,15 @@
 @import "./accessible-nprogress.css";
 
 @layer components {
-  .icon-link {
-    @apply stroke-current stroke-2 h-5 w-5 text-gray-700;
+  svg.icon {
+    @apply stroke-current stroke-2 h-5 w-5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
   @screen md {
-    .icon-link {
+    svg.icon {
       @apply h-6 w-6;
     }
-  }
-  .icon-link:hover {
-    @apply text-gray-900;
   }
 }

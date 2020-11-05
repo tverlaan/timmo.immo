@@ -13,25 +13,40 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: '#b58900',
+        brand: '#bc8d02',
         golden: {
-          '50': '#f9f7ea',
-          '100': '#faf3c7',
-          '200': '#f5ea85',
-          '300': '#efd93f',
-          '400': '#e2bd13',
-          '500': '#d79d06',
-          '600': '#be7904',
-          '700': '#9a5b07',
-          '800': '#79460d',
-          '900': '#61380f',
-        }
+          '100': '#f8f4e6',
+          '200': '#eee3c0',
+          '300': '#e4d19a',
+          '400': '#d0af4e',
+          '500': '#bc8d02',
+          '600': '#a97f02',
+          '700': '#715501',
+          '800': '#553f01',
+          '900': '#382a01',
+        },
+        avocado: {
+          '100': '#f1f3ef',
+          '200': '#dde0d6',
+          '300': '#c8cdbd',
+          '400': '#9ea88c',
+          '500': '#75825a',
+          '600': '#697551',
+          '700': '#464e36',
+          '800': '#353b29',
+          '900': '#23271b',
+        },
       }
     },
     typography: (theme) => ({
       default: {
         css: {
-          'h1, h2, h3, h4, h5, h6': { color: theme('colors.brand') }
+          h1: { color: theme('colors.brand') },
+          h2: { color: theme('colors.brand') },
+          h3: { color: theme('colors.brand') },
+          h4: { color: theme('colors.brand') },
+          a: { color: theme('colors.avocado.600') },
+          'a:hover': { color: theme('colors.avocado.700') }
         }
       },
       lg: {

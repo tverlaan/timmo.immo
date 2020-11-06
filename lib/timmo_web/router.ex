@@ -23,7 +23,7 @@ defmodule TimmoWeb.Router do
   scope "/", TimmoWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    live "/", BlogLive, :root
     live "/about", PageLive, :about
     live "/blog", BlogLive, :index
     live "/blog/:id", PostLive, :show

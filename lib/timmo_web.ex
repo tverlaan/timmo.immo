@@ -31,6 +31,7 @@ defmodule TimmoWeb do
         layout: {TimmoWeb.LayoutView, "live.html"}
 
       unquote(view_helpers())
+      import TimmoWeb.Meta, only: [assign_meta: 1, assign_meta: 2]
     end
   end
 

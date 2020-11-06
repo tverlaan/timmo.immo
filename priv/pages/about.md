@@ -1,5 +1,6 @@
 %{
-    title: "About Me"
+    title: "About Me",
+    summary: "Hi! My name is Timmo Verlaan and this is my website."
 }
 ---
 

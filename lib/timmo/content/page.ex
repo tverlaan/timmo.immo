@@ -2,8 +2,8 @@ defmodule Timmo.Content.Page do
   @moduledoc """
   Definition of a page for Timmo's website.
   """
-  @enforce_keys [:name, :title, :body]
-  defstruct [:name, :title, :body]
+  @enforce_keys [:name, :title, :body, :summary]
+  defstruct [:name, :title, :body, :summary]
 
   def build(filename, attrs, body) do
     name = Path.basename(filename, ".md")

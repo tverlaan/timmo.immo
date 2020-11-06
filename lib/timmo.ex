@@ -6,6 +6,7 @@ defmodule Timmo do
   Contexts are also responsible for managing your data, regardless
   if it comes from the database, an external API or others.
   """
+  @timezone "Europe/Amsterdam"
 
   def name() do
     "Timmo Verlaan"
@@ -20,7 +21,12 @@ defmodule Timmo do
   end
 
   def description() do
-    title()
+    "The website of Timmo Verlaan."
+  end
+
+  def datetime(date) do
+    DateTime.new!(date, ~T[00:00:00], @timezone)
+    |> DateTime.to_iso8601()
   end
 
   def date_updated() do

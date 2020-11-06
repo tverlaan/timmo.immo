@@ -9,6 +9,7 @@ defmodule TimmoWeb.PostLive do
     {:ok,
      socket
      |> assign(:post, post)
-     |> assign(:page_title, post.title)}
+     |> assign(:page_title, post.title)
+     |> assign_meta(post)}
   end
 end

@@ -8,6 +8,8 @@ defmodule TimmoWeb.BlogLive do
     {:ok,
      socket
      |> assign(:posts, posts)
-     |> assign(:page_title, "Blog")}
+     |> assign(:page_title, "Blog")
+     |> assign(:canonical_url, TimmoWeb.Endpoint.url() <> "/blog")
+     |> assign_meta()}
   end
 end

@@ -24,6 +24,12 @@ defprotocol TimmoWeb.Metadata do
   def type(data)
 
   @doc """
+  Image will be used for og:image & twitter:image
+  """
+  @spec image(Metadata.t()) :: String.t()
+  def image(data)
+
+  @doc """
   Additional can specify additional data that is unqiue for different categories. For example `article`.
   It must be a list of tuples
   """
@@ -42,9 +48,21 @@ defimpl TimmoWeb.Metadata, for: TimmoWeb.Metadata.Default do
   def author(_), do: Timmo.name()
   def type(_), do: "website"
   def additionals(_), do: []
+
+  def image(_) do
+    %{
+      path: Path.join("images", "share.png"),
+      alt: Timmo.title(),
+      type: "image/png",
+      w: "600",
+      h: "600"
+    }
+  end
 end
 
 defimpl TimmoWeb.Metadata, for: Timmo.Blog.Post do
+  alias TimmoWeb.Metadata
+
   def title(post), do: post.title
   def description(post), do: post.description
   def author(post), do: post.author
@@ -60,12 +78,18 @@ defimpl TimmoWeb.Metadata, for: Timmo.Blog.Post do
         {"article:tag", tag}
       end
   end
+
+  def image(_), do: Metadata.image(%Metadata.Default{})
 end
 
 defimpl TimmoWeb.Metadata, for: Timmo.Content.Page do
+  alias TimmoWeb.Metadata
+
   def title(page), do: "#{page.title} · #{Timmo.name()}"
   def description(page), do: page.summary
   def author(_), do: Timmo.name()
   def type(_), do: "website"
   def additionals(_), do: []
+
+  def image(_), do: Metadata.image(%Metadata.Default{})
 end

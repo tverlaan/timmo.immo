@@ -10,9 +10,12 @@ defmodule TimmoWeb.Meta do
   defdelegate author(data), to: Metadata
   defdelegate type(data), to: Metadata
   defdelegate additionals(data), to: Metadata
+  defdelegate image(data), to: Metadata
 
-  def image?(_) do
-    false
+  def image?(data) do
+    data
+    |> Metadata.image()
+    |> is_map()
   end
 
   def assigned?(assigns) do

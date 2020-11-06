@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb" xml:base="<%= Routes.url(@conn) %>"><%# http://www.atomenabled.org/developers/syndication/ %>
-  <id><%= Routes.blog_path(@conn, :index) %></id>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb"><%# http://www.atomenabled.org/developers/syndication/ %>
+  <id><%= Routes.blog_url(@conn, :index) %></id>
   <title><%= Timmo.title() %></title>
   <updated><%= datetime_recent(@posts) %></updated>
   <subtitle><%= Timmo.description() %></subtitle>
-  <link href="<%= Routes.site_path(@conn, :feed) %>" rel="self" type="application/atom+xml"/>
-  <link href="<%= Routes.blog_path(@conn, :index) %>" rel="alternate" type="text/html"/>
+  <link href="<%= Routes.site_url(@conn, :feed) %>" rel="self" type="application/atom+xml"/>
+  <link href="<%= Routes.blog_url(@conn, :index) %>" rel="alternate" type="text/html"/>
   <icon>/favicon.ico</icon>
   <author>
     <name><%= Timmo.name() %></name>
     <email><%= Timmo.email() %></email>
-    <uri><%= Routes.page_path(@conn, :index) %></uri>
+    <uri><%= Routes.url(@conn) %></uri>
   </author>
   <rights> © <%= year() %> <%= Timmo.name() %> </rights>
   <%= for post <- @posts do %><entry>
-    <id><%= Routes.post_path(@conn, :show, post.id) %></id>
-    <link href="<%= Routes.post_path(@conn, :show, post.id) %>" rel="alternate" type="text/html"/>
+    <id><%= Routes.post_url(@conn, :show, post.id) %></id>
+    <link href="<%= Routes.post_url(@conn, :show, post.id) %>" rel="alternate" type="text/html"/>
     <title><%= post.title %></title>
     <updated><%= datetime(post.date) %></updated>
     <published><%= datetime(post.date) %></published>

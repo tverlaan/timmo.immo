@@ -12,8 +12,8 @@
     <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
     <%= if compiled_for_prod?() do %>
-      <link rel="dns-prefetch" href="https://plausible.io/"/>
-      <script async defer data-domain="timmo.immo" src="https://plausible.io/js/plausible.js"></script>
+      <link rel="dns-prefetch" href="https://stats.timmo.immo/"/>
+      <script async defer data-domain="timmo.immo" src="https://stats.timmo.immo/js/index.js"></script>
     <% end %>
   </head>
   <body>

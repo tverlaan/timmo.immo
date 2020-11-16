@@ -4,6 +4,7 @@
 
 @import "./phoenix.css";
 @import "./accessible-nprogress.css";
+@import "./makeup.css";
 
 @layer components {
   svg.icon {

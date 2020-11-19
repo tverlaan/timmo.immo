@@ -1,9 +1,8 @@
-// tailwind.config.js
+const colors = require('tailwindcss/colors')
+
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
+  future: {},
+  darkMode: 'media',
   purge: [
     "../lib/timmo_web/live/**/*.leex",
     "../lib/timmo_web/templates/**/*.eex",
@@ -14,6 +13,7 @@ module.exports = {
     extend: {
       colors: {
         brand: '#bc8d02',
+        gray: colors.gray,
         golden: {
           '100': '#f8f4e6',
           '200': '#eee3c0',
@@ -36,34 +36,55 @@ module.exports = {
           '800': '#353b29',
           '900': '#23271b',
         },
-      }
-    },
-    typography: (theme) => ({
-      default: {
-        css: {
-          h1: { color: theme('colors.brand') },
-          h2: { color: theme('colors.brand') },
-          h3: { color: theme('colors.brand') },
-          h4: { color: theme('colors.brand') },
-          a: { color: theme('colors.avocado.600') },
-          'a:hover': { color: theme('colors.avocado.700') }
-        }
       },
-      lg: {
-        css: {
-          h2: { fontSize: '1.25em' },
-          h3: { fontSize: '1.125em' }
-        }
+      screens: {
+        print: { raw: 'print' }
       },
-      xl: {
-        css: {
-          h2: { fontSize: '1.25em' },
-          h3: { fontSize: '1.125em' }
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.gray.600'),
+            h1: { color: theme('colors.brand') },
+            h2: { color: theme('colors.brand') },
+            h3: { color: theme('colors.brand') },
+            h4: { color: theme('colors.brand') },
+            a: {
+              color: theme('colors.avocado.600'),
+              '&:hover': { color: theme('colors.avocado.700') }
+            },
+          }
+        },
+        lg: {
+          css: {
+            h2: { fontSize: '1.5em' },
+            h3: { fontSize: '1.25em' }
+          }
+        },
+        xl: {
+          css: {
+            h2: { fontSize: '1.5em' },
+            h3: { fontSize: '1.25em' }
+          }
+        },
+        dark: {
+          css: {
+            color: theme('colors.gray.400'),
+            'code, strong': { color: theme('colors.gray.200') },
+            pre: { backgroundColor: theme('colors.gray.900') },
+            a: {
+              color: theme('colors.avocado.400'),
+              '&:hover': { color: theme('colors.avocado.300') }
+            },
+
+          }
         }
-      }
-    })
+      })
+    }
   },
   plugins: [
     require('@tailwindcss/typography'),
-  ]
+  ],
+  variants: {
+    typography: ["responsive", "dark"]
+  }
 }

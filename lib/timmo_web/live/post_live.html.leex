@@ -3,10 +3,10 @@
     <h1 class="text-brand text-3xl md:text-4xl font-bold"><%= @post.title %></h1>
   </header>
   <div class="flex justify-between">
-    <p class="text-gray-700 text-sm"><%= @post.date %></p>
+    <p class="text-sm"><%= @post.date %></p>
     <%# <p class="text-gray-800 text-sm"><%= Enum.join(@post.tags, ", ") </p> %>
   </div>
-  <section class="prose prose-lg md:prose-xl">
+  <section class="prose prose-lg md:prose-xl print:prose-sm dark:prose-dark">
     <%= raw(@post.body) %>
   </section>
 </article>

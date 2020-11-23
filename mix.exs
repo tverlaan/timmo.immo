@@ -5,7 +5,7 @@ defmodule Timmo.MixProject do
     [
       app: :timmo,
       version: "0.1.0",
-      elixir: "~> 1.10",
+      elixir: "~> 1.11",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -42,7 +42,7 @@ defmodule Timmo.MixProject do
       {:nimble_publisher, "~> 0.1.1"},
       {:makeup_elixir, ">= 0.0.0"},
       {:makeup_erlang, ">= 0.0.0"},
-      {:credo, "~> 1.4", only: :dev},
+      {:credo, "~> 1.4", only: [:dev, :test]},
       {:tz, "~> 0.11"}
     ]
   end

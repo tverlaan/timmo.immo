@@ -29,10 +29,10 @@ defmodule TimmoWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Timmo.Repo)
+    # :ok = Ecto.Adapters.SQL.Sandbox.checkout(Timmo.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Timmo.Repo, {:shared, self()})
+      # Ecto.Adapters.SQL.Sandbox.mode(Timmo.Repo, {:shared, self()})
     end
 
     :ok

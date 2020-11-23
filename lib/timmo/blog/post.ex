@@ -12,7 +12,9 @@ defmodule Timmo.Blog.Post do
     [date, id] = filename |> Path.rootname() |> Path.basename() |> String.split("-", parts: 2)
     [year, month, day] = Regex.run(~r/(\d{4})(\d{2})(\d{2})/, date, capture: :all_but_first)
     date = Date.from_iso8601!("#{year}-#{month}-#{day}")
-    struct!(__MODULE__, [id: id, date: date, body: body] ++ Map.to_list(attrs))
+    title = Title.capitalize(attrs.title)
+    attrs = Map.drop(attrs, [:title])
+    struct!(__MODULE__, [id: id, date: date, title: title, body: body] ++ Map.to_list(attrs))
   end
 
   def new(title) do

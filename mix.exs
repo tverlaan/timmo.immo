@@ -43,7 +43,8 @@ defmodule Timmo.MixProject do
       {:makeup_elixir, ">= 0.0.0"},
       {:makeup_erlang, ">= 0.0.0"},
       {:credo, "~> 1.4", only: [:dev, :test]},
-      {:tz, "~> 0.11"}
+      {:tz, "~> 0.11"},
+      {:titlex, "~> 0.2"}
     ]
   end
 

@@ -9,6 +9,13 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
+## Adding a blog entry
+
+```bash
+> mix blog.post [SLUG]
+post created at priv/posts/[YYYYMMDD-SLUG].md
+```
+
 ## Todo
 
   * enable tags

@@ -39,6 +39,7 @@
         <nav role="navigation" class="py-2 text-lg md:text-xl">
           <ul class="flex space-x-3">
             <li><%= live_redirect "About", to: Routes.page_path(@conn, :about), class: "hover:text-gray-900 dark:hover:text-gray-200" %></li>
+            <li><%= live_redirect "Now", to: Routes.page_path(@conn, :now), class: "hover:text-gray-900 dark:hover:text-gray-200" %></li>
             <li><%= live_redirect "Blog", to: Routes.blog_path(@conn, :index), class: "hover:text-gray-900 dark:hover:text-gray-200" %></li>
           </ul>
         </nav>

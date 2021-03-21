@@ -25,6 +25,7 @@ defmodule TimmoWeb.Router do
 
     live "/", BlogLive, :root
     live "/about", PageLive, :about
+    live "/now", PageLive, :now
     live "/blog", BlogLive, :index
     live "/blog/:id", PostLive, :show
   end

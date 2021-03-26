@@ -1,5 +1,7 @@
 defmodule TimmoWeb.LayoutView do
   use TimmoWeb, :view
+  alias TimmoWeb.Meta
+
   @compile_env Mix.env()
 
   def brand_color(), do: "#bc8d02"

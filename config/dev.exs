@@ -64,7 +64,8 @@ config :timmo, TimmoWeb.Endpoint,
       ~r"lib/timmo_web/templates/.*(eex)$",
       ~r"priv/posts/.*(md)$",
       ~r"priv/pages/.*(md)$"
-    ]
+    ],
+    iframe_attrs: [class: "hidden"]
   ]
 
 # Do not include metadata nor timestamps in development logs

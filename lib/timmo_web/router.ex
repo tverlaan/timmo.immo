@@ -7,7 +7,7 @@ defmodule TimmoWeb.Router do
     plug :fetch_live_flash
     plug :put_root_layout, {TimmoWeb.LayoutView, :root}
     plug :protect_from_forgery
-    plug :put_secure_browser_headers
+    plug :put_secure_browser_headers, %{"permissions-policy" => "interest-cohort=()"}
   end
 
   pipeline :not_browser do

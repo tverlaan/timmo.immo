@@ -18,4 +18,6 @@ I just finished [Humankind: A Hopeful History / De Meeste Mensen Deugen](https:/
 
 ## Van conversion 🚌
 
-The van is at the shop for the "APK". When it's back and I when I'll make some time available I'll work on it again. Progress can be followed on the photo sharing website.
+We're getting closer to a point in which the van will look finished. The roof goes up in a few weeks. We also did quite some work on the kitchen and some cabin space. Progress can be followed on the photo sharing website.
+
+_June 2021_

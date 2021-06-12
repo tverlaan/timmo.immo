@@ -7,7 +7,8 @@
     "watch:css": "postcss css/app.css --verbose -o ../priv/static/css/app.css -w",
     "build:js": "webpack --mode development",
     "watch:js": "webpack --mode development --watch-stdin",
-    "deploy": "NODE_ENV=production webpack --mode production && NODE_ENV=production postcss css/app.css --verbose -o ../priv/static/css/app.css"
+    "deploy": "NODE_ENV=production webpack --mode production && NODE_ENV=production postcss css/app.css --verbose -o ../priv/static/css/app.css",
+    "browsersupdate": "npx browserslist --update-db"
   },
   "dependencies": {
     "accessible-nprogress": "^2.0.0",

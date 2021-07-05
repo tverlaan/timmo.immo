@@ -2,6 +2,7 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   future: {},
+  mode: 'jit',
   darkMode: 'media',
   purge: [
     "../lib/timmo_web/live/**/*.leex",
@@ -83,8 +84,5 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
-  ],
-  variants: {
-    typography: ["responsive", "dark"]
-  }
+  ]
 }

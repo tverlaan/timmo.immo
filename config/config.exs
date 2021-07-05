@@ -4,7 +4,7 @@ config :timmo,
   ecto_repos: [Timmo.Repo]
 
 config :timmo, TimmoWeb.Endpoint,
-  url: [host: "localhost", port: 4000],
+  url: [host: "localhost", port: 7600],
   server: true,
   secret_key_base: "7xB4ha98N4270Azb0cZxX3BFtqG/0yBpY4jy7WwXvQ3DLbA8TCT1o+9sGV4XcHYU",
   render_errors: [view: TimmoWeb.ErrorView, accepts: ~w(html json), layout: false],

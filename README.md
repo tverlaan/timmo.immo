@@ -19,4 +19,3 @@ post created at priv/posts/[YYYYMMDD-SLUG].md
 ## Todo
 
   * enable tags
-  * which font

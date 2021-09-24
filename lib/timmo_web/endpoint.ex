@@ -20,7 +20,7 @@ defmodule TimmoWeb.Endpoint do
     at: "/",
     from: :timmo,
     gzip: true,
-    only: ~w(css images js favicon.ico robots.txt browserconfig.xml site.webmanifest)
+    only: ~w(images assets favicon.ico robots.txt browserconfig.xml site.webmanifest)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

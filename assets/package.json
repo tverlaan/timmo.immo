@@ -3,34 +3,23 @@
   "description": " ",
   "license": "MIT",
   "scripts": {
-    "build:css": "postcss css/app.css --verbose -o ../priv/static/css/app.css",
-    "watch:css": "TAILWIND_MODE=watch postcss css/app.css --verbose -o ../priv/static/css/app.css -w",
-    "build:js": "webpack --mode development",
-    "watch:js": "webpack --mode development --watch-stdin",
-    "deploy": "NODE_ENV=production webpack --mode production && NODE_ENV=production postcss css/app.css --verbose -o ../priv/static/css/app.css",
+    "watch": "TAILWIND_MODE=watch postcss css/app.css --verbose -o ../priv/static/assets/app.css -w",
+    "deploy": "NODE_ENV=production postcss css/app.css --verbose -o ../priv/static/assets/app.css",
     "browsersupdate": "npx browserslist --update-db"
   },
   "dependencies": {
-    "accessible-nprogress": "^2.0.0",
     "phoenix": "file:../deps/phoenix",
     "phoenix_html": "file:../deps/phoenix_html",
     "phoenix_live_view": "file:../deps/phoenix_live_view"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.0.2",
-    "babel-loader": "^8.0.0",
-    "copy-webpack-plugin": "^5.1.1",
     "cssnano": "^5.0.6",
     "postcss": "^8.1.1",
     "postcss-cli": "^8.3.0",
     "postcss-import": "^14.0.2",
-    "tailwindcss": "^2.0.1",
-    "terser-webpack-plugin": "^2.3.2",
-    "webpack": "4.41.5",
-    "webpack-cli": "^3.3.2"
+    "tailwindcss": "^2.0.1"
   },
   "browserslist": [
     "defaults"

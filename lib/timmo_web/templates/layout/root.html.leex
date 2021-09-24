@@ -9,8 +9,8 @@
     <%= live_title_tag assigns[:page_title] || Timmo.title() , suffix: " · #{Timmo.name()}" %>
     <link rel="alternate" type="application/atom+xml" href="<%= Routes.site_path(@conn, :feed) %>" title="Timmo's feed"/>
     <%= render("_icons.html", assigns) %>
-    <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
-    <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/assets/app.css") %>"/>
+    <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/assets/app.js") %>"></script>
     <%= if compiled_for_prod?() do %>
       <link rel="dns-prefetch" href="https://stats.timmo.immo/"/>
       <script async defer data-domain="timmo.immo" src="https://stats.timmo.immo/js/index.js"></script>

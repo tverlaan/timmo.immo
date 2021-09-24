@@ -21,12 +21,9 @@ config :timmo, TimmoWeb.Endpoint,
   code_reloader: true,
   check_origin: false,
   watchers: [
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
     yarn: [
-      "watch:js",
-      cd: Path.expand("../assets", __DIR__)
-    ],
-    yarn: [
-      "watch:css",
+      "watch",
       cd: Path.expand("../assets", __DIR__)
     ]
   ]

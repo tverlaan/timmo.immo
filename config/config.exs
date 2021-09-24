@@ -23,4 +23,12 @@ config :tz,
   reject_time_zone_periods_before_year: 2020,
   build_time_zone_periods_with_ongoing_dst_changes_until_year: NaiveDateTime.utc_now().year + 1
 
+config :esbuild,
+  version: "0.12.18",
+  default: [
+    args: ~w(js/app.js --bundle --target=es2016 --outdir=../priv/static/assets),
+    cd: Path.expand("../assets", __DIR__),
+    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+  ]
+
 import_config "#{Mix.env()}.exs"

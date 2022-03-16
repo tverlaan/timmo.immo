@@ -10,14 +10,16 @@ _This page is inspired by [/now](https://nownownow.com/about)-pages_
 
 I'm working as a Lead Software Developer at [Wuunder](wearewuunder.com). Growing and improving our logistics platform and expanding to multiple countries in Europe.
 
+## Recently moved 🏡
+
+Me and my family recently moved and are doing a lot of work ourselves. This definitely puts a strain on other things, but it's so much worth it. Next up is the bathroom.
+
 ## Reading 📖
 
-I just started reading [Scaling Up](https://scalingup.com) by Verne Harnish. I haven't decided on my next fictional book yet.
-
-I just finished [Humankind: A Hopeful History / De Meeste Mensen Deugen](https://decorrespondent.nl/demeestemensendeugen) by Rutger Bregman. I can recommend this one if you're looking for a positive perspective on the human species and the world. I also re-read a book I read probably ~20 years ago; [The World of Null A](https://en.wikipedia.org/wiki/The_World_of_Null-A) by A. E. van Vogt. If you're into SciFi check it out :).
+I am still reading [Scaling Up](https://scalingup.com) by Verne Harnish and I started reading The Circle. I've seen the movie, but a book brings a different kind of perspective on things.
 
 ## Van conversion 🚌
 
-We're getting closer to a point in which the van will look finished. The roof goes up in a few weeks. We also did quite some work on the kitchen and some cabin space. Progress can be followed on the photo sharing website.
+The van is currently on hold due to our house move. We're still excited to continue with it ASAP. Progress can be followed on the photo sharing website.
 
-_June 2021_
+_March 2022_

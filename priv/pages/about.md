@@ -4,10 +4,11 @@
 }
 ---
 
-Hi! My name is Timmo Verlaan and this is my website. I live in Amsterdam together with my wife Brechje and our three kids, Nore, Tuur & Roeks.
+Hi! My name is Timmo Verlaan and this is my website. I live in Deventer together with my wife Brechje and our four kids, Nore, Tuur, Roeks & Prim.
 
 I'm working as a software developer with quite some experience in Voice over IP. I've written code in multiple lanugages, currently [Elixir](https://elixir-lang.org) stands out the most. I like it so much that it helped me to brew beer [which I talked about](https://www.youtube.com/watch?v=kMHXd_iMGRU) at [Elixir Conf EU 2017](http://www.archive.elixirconf.eu/elixirconf2017). Giving that talk inspired me to present more often, here are a few more:
 
+  * [Fireside Chat with LiveView Surface](https://www.youtube.com/watch?v=xdqd1DOufAg) at Code BEAM Virtual 2021
   * "A war story - from failures to success" at [Code BEAM STO 2020](https://codesync.global/conferences/code-beam-sto/)
   * [No(de) Discovery without DNS & EPMD](https://www.youtube.com/watch?v=F_YUyd_Qdjs) at [Code BEAM STO 2018](https://codesync.global/conferences/code-beam-sto-2018/)
 

@@ -16,17 +16,23 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Read .tool-versions
+        uses: marocchino/tool-versions-action@v1
+        id: versions
+
       - name: Set up Elixir
         uses: erlef/setup-elixir@v1
         with:
-          elixir-version: "1.12.1"
-          otp-version: "23.2.4"
+          elixir-version: ${{steps.versions.outputs.elixir}}
+          otp-version: ${{steps.versions.outputs.erlang}}
       
       - name: Restore dependencies cache
         uses: actions/cache@v2
         with:
-          path: deps
-          key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+          path: |
+            deps
+            _build
+          key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.*', 'config/*.exs') }}
           restore-keys: ${{ runner.os }}-mix-
 
       - name: Install dependencies

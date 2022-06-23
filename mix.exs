@@ -56,7 +56,7 @@ defmodule Timmo.MixProject do
       install: ["esbuild.install --if-missing", "tailwind.install --if-missing"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      "assets.deploy": ["esbuild default --minify", "tailwind default --minify"]
+      "assets.deploy": ["esbuild default --minify", "tailwind default --minify", "phx.digest"]
     ]
   end
 end

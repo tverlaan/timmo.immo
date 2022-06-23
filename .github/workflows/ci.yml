@@ -52,3 +52,6 @@ jobs:
 
       - name: Run tests
         run: mix test
+
+      - name: Cleanup application build files
+        run: mix clean

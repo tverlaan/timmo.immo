@@ -22,10 +22,7 @@ config :timmo, TimmoWeb.Endpoint,
   check_origin: false,
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
-    yarn: [
-      "watch",
-      cd: Path.expand("../assets", __DIR__)
-    ]
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
   ]
 
 # ## SSL Support

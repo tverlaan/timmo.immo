@@ -45,7 +45,8 @@ defmodule Timmo.MixProject do
       {:credo, "~> 1.4", only: [:dev, :test]},
       {:tz, "~> 0.11"},
       {:titlex, "~> 0.2"},
-      {:esbuild, "~> 0.1", runtime: Mix.env() == :dev}
+      {:esbuild, "~> 0.1", runtime: Mix.env() == :dev},
+      {:tailwind, "~> 0.1", runtime: Mix.env() == :dev}
     ]
   end
 
@@ -54,7 +55,7 @@ defmodule Timmo.MixProject do
       setup: ["deps.get"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      "assets.deploy": ["esbuild default --minify"]
+      "assets.deploy": ["esbuild default --minify", "tailwind default --minify"]
     ]
   end
 end

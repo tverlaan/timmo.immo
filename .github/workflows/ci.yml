@@ -19,14 +19,9 @@ jobs:
       - name: Set up Elixir
         uses: erlef/setup-elixir@v1
         with:
-          elixir-version: "1.11.1"
-          otp-version: "23.1"
+          elixir-version: "1.12.1"
+          otp-version: "23.2.4"
       
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14.13.1"
-
       - name: Restore dependencies cache
         uses: actions/cache@v2
         with:
@@ -34,22 +29,11 @@ jobs:
           key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
           restore-keys: ${{ runner.os }}-mix-
 
-      - name: Find yarn cache location
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - uses: actions/cache@v1
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
       - name: Install dependencies
         run: mix deps.get
 
-      - name: Install JS deps
-        run: yarn --cwd assets install
+      - name: Install frontend deps
+        run: mix install
 
       - name: Compile
         run: mix compile --warnings-as-errors

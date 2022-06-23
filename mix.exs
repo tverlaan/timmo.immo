@@ -53,6 +53,7 @@ defmodule Timmo.MixProject do
   defp aliases do
     [
       setup: ["deps.get"],
+      install: ["esbuild.install --if-missing", "tailwind.install --if-missing"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       "assets.deploy": ["esbuild default --minify", "tailwind default --minify"]

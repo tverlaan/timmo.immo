@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 config :timmo,
   ecto_repos: [Timmo.Repo]

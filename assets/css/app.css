@@ -7,14 +7,20 @@
 @import "./makeup.css";
 
 @layer components {
-  svg.icon {
+  .icon {
     @apply stroke-current stroke-2 h-5 w-5;
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
+  .mastodon {
+    @apply h-5 w-5 fill-gray-600;
+  }
+  .mastodon:hover {
+    @apply fill-gray-900;
+  }
   @screen md {
-    svg.icon {
+    .icon, .mastodon {
       @apply h-6 w-6;
     }
   }

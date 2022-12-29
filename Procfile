@@ -1,1 +1,0 @@
-web: ./_build/prod/rel/timmo/bin/timmo start

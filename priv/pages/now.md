@@ -6,20 +6,20 @@
 
 _This page is inspired by [/now](https://nownownow.com/about)-pages_
 
-## Job 📦
+## Job 📶
 
-I'm working as a Lead Software Developer at [Wuunder](wearewuunder.com). Growing and improving our logistics platform and expanding to multiple countries in Europe.
+I quit employment and I'm currently working as contractor for Athonet.
 
 ## Recently moved 🏡
 
-Me and my family recently moved and are doing a lot of work ourselves. This definitely puts a strain on other things, but it's so much worth it. Next up is the bathroom.
+We moved about a year ago and are doing a lot of work ourselves. This definitely puts a strain on other things, but it's so much worth it. We remodeled and expanded the bath room. Next up are the solar panels!
 
 ## Reading 📖
 
-I am still reading [Scaling Up](https://scalingup.com) by Verne Harnish and I started reading The Circle. I've seen the movie, but a book brings a different kind of perspective on things.
+I haven't got much time for reading between work, kids and renovating the house. I'm open to book suggestions though.
 
 ## Van conversion 🚌
 
-The van is currently on hold due to our house move. We're still excited to continue with it ASAP. Progress can be followed on the photo sharing website.
+The summer of 2021 was the first time we went on a trip with our van. It's still very much a work in progress, but at least usable 😄. Progress can be followed on the photo sharing website.
 
-_March 2022_
+_January 2023_

@@ -23,6 +23,12 @@
       @apply h-6 w-6;
     }
   }
+  .anchor {
+    @apply absolute opacity-0 -ml-7 h-8 w-7 p-1 text-gray-600
+  }
+  h2:hover .anchor {
+    @apply opacity-100;
+  }
 }
 
 /* phoenix */

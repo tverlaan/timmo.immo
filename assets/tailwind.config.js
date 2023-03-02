@@ -3,6 +3,7 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   future: {},
   content: [
+    "../lib/timmo_web/live/**/*.ex",
     "../lib/timmo_web/live/**/*.leex",
     "../lib/timmo_web/templates/**/*.eex",
     "../lib/timmo_web/templates/**/*.leex",

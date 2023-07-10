@@ -20,6 +20,10 @@ defmodule Timmo do
     "Timmo's Website"
   end
 
+  def domain() do
+    "timmo.immo"
+  end
+
   def description() do
     "The website of Timmo Verlaan."
   end

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="3.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:atom="http://www.w3.org/2005/Atom">
+  <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
+  <xsl:template match="/">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+      <head>
+        <title>
+        RSS Feed | <xsl:value-of select="/atom:feed/atom:title"/>
+        </title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" href="<%= Routes.static_url(@conn, "/assets/app.css") %>"/>
+      </head>
+      <body class="text-gray-600 dark:text-gray-400 dark:bg-gray-800">
+        <div class="mx-auto px-4 max-w-4xl xl:max-w-5xl space-y-8 py-14 lg:pb-24">
+          <p class="text-2xl border-l-4 p-4 border-avocado-300 bg-avocado-100">
+            <strong>This is an RSS feed</strong>. Visit <a class="text-avocado-700 underline" href="https://aboutfeeds.com">About Feeds</a> to learn more and get started. It’s free.
+          </p>
+          <h1 class="text-2xl md:text-4xl font-bold">RSS Feed Preview</h1>
+          <h2 class="text-xl md:text-2xl font-bold"><%= Timmo.domain() %></h2>
+          <p class="prose pb-4">
+            <xsl:value-of select="/atom:feed/atom:subtitle"/>
+          </p>
+          <a class="text-avocado-600 hover:text-avocado-700 underline">
+            <xsl:attribute name="href">
+              <xsl:value-of select="/atom:feed/atom:link[2]/@href"/>
+            </xsl:attribute>
+              Visit Website &#x2192;
+          </a>
+          <h2 class="text-xl md:text-2xl font-bold">Recent blog posts</h2>
+          <xsl:for-each select="/atom:feed/atom:entry">
+            <div>
+              <a class="text-brand hover:text-golden-600 font-bold lg:text-lg">
+                <xsl:attribute name="href">
+                  <xsl:value-of select="atom:link/@href"/>
+                </xsl:attribute>
+                <xsl:value-of select="atom:title"/>
+              </a>
+              <p class="text-sm">Last updated:
+                <xsl:value-of select="substring(atom:updated, 0, 11)" />
+              </p>
+            </div>
+          </xsl:for-each>
+        </div>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>

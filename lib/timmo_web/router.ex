@@ -18,6 +18,7 @@ defmodule TimmoWeb.Router do
     pipe_through :not_browser
 
     get "/feed", SiteController, :feed
+    get "/rss-style.xsl", SiteController, :feed_xslt
   end
 
   scope "/", TimmoWeb do

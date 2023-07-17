@@ -20,8 +20,8 @@ config :phoenix, :json_library, Jason
 config :elixir, :time_zone_database, Tz.TimeZoneDatabase
 
 config :tz,
-  reject_time_zone_periods_before_year: 2020,
-  build_time_zone_periods_with_ongoing_dst_changes_until_year: NaiveDateTime.utc_now().year + 1
+  reject_periods_before_year: 2020,
+  build_dst_periods_until_year: NaiveDateTime.utc_now().year + 1
 
 config :esbuild,
   version: "0.12.18",

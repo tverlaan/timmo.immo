@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= if Meta.assigned?(assigns), do: render(TimmoWeb.MetaView, "meta.html", assigns) %>
     <%= csrf_meta_tag() %>
     <.live_title suffix=" · #{Timmo.name()}"><%= assigns[:page_title] || Timmo.title() %></.live_title>
-    <link rel="alternate" type="application/atom+xml" href={Routes.site_path(@conn, :feed)} title="Timmo's feed"/>
+    <link rel="alternate" type="application/atom+xml" href={Routes.site_path(@conn, :feed)} title="Timmo's feed" />
     <%= render("_icons.html", assigns) %>
-    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
-    <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
+    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")} />
+    <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}>
+    </script>
     <%= if compiled_for_prod?() do %>
-      <link rel="dns-prefetch" href="https://stats.timmo.immo/"/>
-      <script async defer data-domain="timmo.immo" src="https://stats.timmo.immo/js/index.js"></script>
+      <link rel="dns-prefetch" href="https://stats.timmo.immo/" />
+      <script async defer data-domain="timmo.immo" src="https://stats.timmo.immo/js/index.js">
+      </script>
     <% end %>
   </head>
   <body class="text-gray-600 dark:text-gray-400 dark:bg-gray-800">
@@ -22,20 +24,65 @@
         <div class="flex items-center justify-between">
           <div class="text-brand text-2xl md:text-4xl">
             <.link href={Routes.blog_path(@conn, :root)} class="hover:text-golden-600 dark:hover:text-golden-400">
-            TIMMO <span class="hidden md:inline">VERLAAN</span>
+              TIMMO <span class="hidden md:inline">VERLAAN</span>
             </.link>
             <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <.link href={Routes.live_dashboard_path(@conn, :home)} class="hidden md:inline hover:text-golden-600 dark:hover:text-golden-400">.</.link>
+              <.link href={Routes.live_dashboard_path(@conn, :home)} class="hidden md:inline hover:text-golden-600 dark:hover:text-golden-400">
+                .
+              </.link>
             <% end %>
           </div>
           <div class="flex items-center">
-            <a href="https://github.com/tverlaan" rel="noopener" target="_blank" class="p-2 md:p-3 hover:text-gray-900 dark:hover:text-gray-200"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Timmo on GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
-            <a href="https://fosstodon.org/@timmoverlaan" rel="me noopener" target="_blank" class="p-2 md:p-3 hover:text-gray-900 dark:hover:text-gray-200"><svg class="mastodon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Timmo on Mastodon</title><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/></svg></a>
-            <a href="https://twitter.com/timmoverlaan" rel="noopener" target="_blank" class="p-2 md:p-3 hover:text-gray-900 dark:hover:text-gray-200"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Timmo on Twitter</title><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
-            <a href="https://instagram.com/coldcuppabeer/" rel="noopener" target="_blank" class="p-2 md:p-3 hover:text-gray-900 dark:hover:text-gray-200"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Timmo on Instagram</title><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-            <a href="https://linkedin.com/in/timmoverlaan/" rel="noopener" target="_blank" class="p-2 md:p-3 hover:text-gray-900 dark:hover:text-gray-200"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Timmo on LinkedIn</title><path stroke-width="1.8" d="m5.839218,4.101561c0,1.211972 -0.974141,2.194011 -2.176459,2.194011s-2.176459,-0.982039 -2.176459,-2.194011c0,-1.211094 0.974141,-2.194011 2.176459,-2.194011s2.176459,0.982917 2.176459,2.194011zm0.017552,3.94922l-4.388022,0l0,14.04167l4.388022,0l0,-14.04167zm7.005038,0l-4.359939,0l0,14.04167l4.360816,0l0,-7.370999c0,-4.098413 5.291077,-4.433657 5.291077,0l0,7.370999l4.377491,0l0,-8.89101c0,-6.915523 -7.829986,-6.66365 -9.669445,-3.259423l0,-1.891237z"/></svg></a>
-            <a href="mailto:{Timmo.email()}" class="p-2 md:p-3 hover:text-gray-900 dark:hover:text-gray-200"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Email Timmo</title><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
-            <a href={Routes.site_path(@conn, :feed)} class="p-2 md:p-3 hover:text-gray-900 dark:hover:text-gray-200"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Feed</title><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+            <a href="https://github.com/tverlaan" rel="noopener" target="_blank" class="p-2 md:p-3 hover:text-gray-900 dark:hover:text-gray-200">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>Timmo on GitHub</title>
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+            </a>
+            <a href="https://fosstodon.org/@timmoverlaan" rel="me noopener" target="_blank" class="p-2 md:p-3 hover:text-gray-900 dark:hover:text-gray-200">
+              <svg class="mastodon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>Timmo on Mastodon</title>
+                <path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z" />
+              </svg>
+            </a>
+            <a href="https://twitter.com/timmoverlaan" rel="noopener" target="_blank" class="p-2 md:p-3 hover:text-gray-900 dark:hover:text-gray-200">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>Timmo on Twitter</title>
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+              </svg>
+            </a>
+            <a href="https://instagram.com/coldcuppabeer/" rel="noopener" target="_blank" class="p-2 md:p-3 hover:text-gray-900 dark:hover:text-gray-200">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>Timmo on Instagram</title>
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/timmoverlaan/" rel="noopener" target="_blank" class="p-2 md:p-3 hover:text-gray-900 dark:hover:text-gray-200">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>Timmo on LinkedIn</title>
+                <path
+                  stroke-width="1.8"
+                  d="m5.839218,4.101561c0,1.211972 -0.974141,2.194011 -2.176459,2.194011s-2.176459,-0.982039 -2.176459,-2.194011c0,-1.211094 0.974141,-2.194011 2.176459,-2.194011s2.176459,0.982917 2.176459,2.194011zm0.017552,3.94922l-4.388022,0l0,14.04167l4.388022,0l0,-14.04167zm7.005038,0l-4.359939,0l0,14.04167l4.360816,0l0,-7.370999c0,-4.098413 5.291077,-4.433657 5.291077,0l0,7.370999l4.377491,0l0,-8.89101c0,-6.915523 -7.829986,-6.66365 -9.669445,-3.259423l0,-1.891237z"
+                />
+              </svg>
+            </a>
+            <a href="mailto:{Timmo.email()}" class="p-2 md:p-3 hover:text-gray-900 dark:hover:text-gray-200">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>Email Timmo</title>
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+            <a href={Routes.site_path(@conn, :feed)} class="p-2 md:p-3 hover:text-gray-900 dark:hover:text-gray-200">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>Feed</title>
+                <path d="M4 11a9 9 0 0 1 9 9"></path>
+                <path d="M4 4a16 16 0 0 1 16 16"></path>
+                <circle cx="5" cy="19" r="1"></circle>
+              </svg>
+            </a>
           </div>
         </div>
         <nav role="navigation" class="py-2 text-lg md:text-xl">

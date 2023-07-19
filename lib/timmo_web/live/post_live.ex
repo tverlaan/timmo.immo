@@ -22,7 +22,6 @@ defmodule TimmoWeb.PostLive do
       </header>
       <div class="flex justify-between">
         <p class="text-sm"><%= @post.date %></p>
-        <%# <p class="text-gray-800 text-sm"><%= Enum.join(@post.tags, ", ") </p> %>
       </div>
       <section class="prose prose-lg md:prose-xl print:prose-sm print:max-w-none dark:prose-dark">
         <%= raw(link_headings(@post.body)) %>

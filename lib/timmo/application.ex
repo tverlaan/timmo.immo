@@ -5,7 +5,6 @@ defmodule Timmo.Application do
 
   def start(_type, _args) do
     children = [
-      # Timmo.Repo,
       TimmoWeb.Telemetry,
       {Phoenix.PubSub, name: Timmo.PubSub},
       TimmoWeb.Endpoint

@@ -28,7 +28,7 @@ defmodule TimmoWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {TimmoWeb.LayoutView, "live.html"}
+        layout: {TimmoWeb.LayoutView, :live}
 
       unquote(view_helpers())
       import TimmoWeb.Meta, only: [assign_meta: 1, assign_meta: 2]
@@ -65,7 +65,7 @@ defmodule TimmoWeb do
       use Phoenix.HTML
 
       # Import LiveView helpers (live_render, live_component, live_patch, etc)
-      import Phoenix.LiveView.Helpers
+      import Phoenix.Component
 
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View

@@ -13,6 +13,24 @@ defmodule TimmoWeb.PostLive do
      |> assign_meta(post)}
   end
 
+  @impl true
+  def render(assigns) do
+    ~H"""
+    <article role="article" class="space-y-4">
+      <header>
+        <h1 class="text-brand text-3xl md:text-4xl font-bold"><%= @post.title %></h1>
+      </header>
+      <div class="flex justify-between">
+        <p class="text-sm"><%= @post.date %></p>
+        <%# <p class="text-gray-800 text-sm"><%= Enum.join(@post.tags, ", ") </p> %>
+      </div>
+      <section class="prose prose-lg md:prose-xl print:prose-sm print:max-w-none dark:prose-dark">
+        <%= raw(link_headings(@post.body)) %>
+      </section>
+    </article>
+    """
+  end
+
   @h2_regex ~r/<h2.*?>(.*?)<\/h2>/s
   defp link_headings(content) do
     Regex.replace(@h2_regex, content, fn match, title ->

@@ -7,7 +7,6 @@ defmodule Timmo.MixProject do
       version: "0.1.0",
       elixir: "~> 1.11",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -26,15 +25,13 @@ defmodule Timmo.MixProject do
 
   defp deps do
     [
-      {:phoenix, "~> 1.6.0"},
-      {:phoenix_ecto, "~> 4.1"},
-      {:ecto_sql, "~> 3.4"},
-      {:postgrex, ">= 0.0.0"},
-      {:phoenix_live_view, "~> 0.16.0"},
-      {:floki, ">= 0.0.0", only: :test},
+      {:phoenix, "~> 1.7"},
+      {:phoenix_view, "~> 2.0"},
+      {:phoenix_live_view, "~> 0.16"},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_dashboard, "~> 0.4"},
+      {:floki, ">= 0.0.0", only: :test},
       {:telemetry_metrics, "~> 0.4"},
       {:telemetry_poller, "~> 0.4"},
       {:jason, "~> 1.0"},
@@ -54,8 +51,6 @@ defmodule Timmo.MixProject do
     [
       setup: ["deps.get"],
       install: ["esbuild.install --if-missing", "tailwind.install --if-missing"],
-      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.drop", "ecto.setup"],
       "assets.deploy": ["esbuild default --minify", "tailwind default --minify", "phx.digest"]
     ]
   end

@@ -11,8 +11,20 @@ defmodule TimmoWeb.PageLive do
 
     {:ok,
      socket
-     |> assign(:page, page)
+     |> assign(:page_body, page.body)
      |> assign(:page_title, page.title)
      |> assign_meta(page)}
+  end
+
+  @impl true
+  def render(assigns) do
+    ~H"""
+    <article role="article" class="space-y-6">
+      <h1 class="text-brand text-3xl md:text-4xl font-bold"><%= @page_title %></h1>
+      <section class="prose prose-lg md:prose-xl print:prose-sm dark:prose-dark">
+        <%= raw(@page_body) %>
+      </section>
+    </article>
+    """
   end
 end

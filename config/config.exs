@@ -1,8 +1,5 @@
 import Config
 
-config :timmo,
-  ecto_repos: [Timmo.Repo]
-
 config :timmo, TimmoWeb.Endpoint,
   url: [host: "localhost", port: 7600],
   server: true,

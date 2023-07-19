@@ -1,0 +1,23 @@
+    <link rel="canonical" href={assigns[:canonical_url] || Routes.url(@conn) <> @conn.request_path}>
+    <meta name="title" content={Meta.title(@meta)}/>
+    <meta name="description" content={Meta.description(@meta)}/>
+    <meta name="author" content={Meta.author(@meta)}/>
+    <meta property="og:title" content={Meta.title(@meta)}>
+    <meta property="og:url" content={assigns[:canonical_url] || Routes.url(@conn) <> @conn.request_path}>
+    <meta property="og:description" content={Meta.description(@meta)}>
+    <meta property="og:site_name" content={Timmo.title()}>
+    <meta property="og:type" content={Meta.type(@meta)}>
+<%= for {property, content} <- Meta.additionals(@meta) do %>
+    <meta property={property} content={content}><% end %>
+<%= if Meta.image?(@meta) do %>
+    <meta property="og:image" content={Routes.static_url(@conn, "/" <> Meta.image(@meta).path)}>
+    <meta property="og:image:alt" content={Meta.image(@meta).alt}>
+    <meta property="og:image:type" content={Meta.image(@meta).type}>
+    <meta property="og:image:width" content={Meta.image(@meta).w}>
+    <meta property="og:image:height" content={Meta.image(@meta).h}>
+    <meta property="twitter:image" content={Routes.static_url(@conn, "/" <> Meta.image(@meta).path)}>
+<% end %>
+    <meta property="twitter:title" content={Meta.title(@meta)}>
+    <meta property="twitter:description" content={Meta.description(@meta)}>
+    <meta property="twitter:site" content={twitter_handle()}>
+    <meta property="twitter:card" content="summary">

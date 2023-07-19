@@ -32,6 +32,6 @@ defmodule TimmoWeb.Meta do
   end
 
   defp assign(%Phoenix.LiveView.Socket{} = conn, key, meta) do
-    Phoenix.LiveView.assign(conn, key, meta)
+    Phoenix.Component.assign(conn, key, meta)
   end
 end

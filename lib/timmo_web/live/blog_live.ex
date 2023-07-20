@@ -21,7 +21,7 @@ defmodule TimmoWeb.BlogLive do
       <article role="article" class="space-y-3 pb-4 border-b">
         <header>
           <h1 class="text-brand text-2xl md:text-4xl font-bold">
-            <.link href={Routes.post_path(@socket, :show, post.id)} class="hover:text-golden-600 dark:hover:text-golden-400">
+            <.link navigate={Routes.post_path(@socket, :show, post.id)} class="hover:text-golden-600 dark:hover:text-golden-400">
               <%= post.title %>
             </.link>
           </h1>

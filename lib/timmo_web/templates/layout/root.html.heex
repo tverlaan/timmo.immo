@@ -23,11 +23,11 @@
       <header class="pt-6 md:pt-10 print:hidden">
         <div class="flex items-center justify-between">
           <div class="text-brand text-2xl md:text-4xl">
-            <.link href={Routes.blog_path(@conn, :root)} class="hover:text-golden-600 dark:hover:text-golden-400">
+            <.link navigate={Routes.blog_path(@conn, :root)} class="hover:text-golden-600 dark:hover:text-golden-400">
               TIMMO <span class="hidden md:inline">VERLAAN</span>
             </.link>
             <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <.link href={Routes.live_dashboard_path(@conn, :home)} class="hidden md:inline hover:text-golden-600 dark:hover:text-golden-400">
+              <.link navigate={Routes.live_dashboard_path(@conn, :home)} class="hidden md:inline hover:text-golden-600 dark:hover:text-golden-400">
                 .
               </.link>
             <% end %>
@@ -87,9 +87,9 @@
         </div>
         <nav role="navigation" class="py-2 text-lg md:text-xl">
           <ul class="flex space-x-3">
-            <li><.link href={Routes.page_path(@conn, :about)} class="hover:text-gray-900 dark:hover:text-gray-200">About</.link></li>
-            <li><.link href={Routes.page_path(@conn, :now)} class="hover:text-gray-900 dark:hover:text-gray-200">Now</.link></li>
-            <li><.link href={Routes.blog_path(@conn, :index)} class="hover:text-gray-900 dark:hover:text-gray-200">Blog</.link></li>
+            <li><.link navigate={Routes.page_path(@conn, :about)} class="hover:text-gray-900 dark:hover:text-gray-200">About</.link></li>
+            <li><.link navigate={Routes.page_path(@conn, :now)} class="hover:text-gray-900 dark:hover:text-gray-200">Now</.link></li>
+            <li><.link navigate={Routes.blog_path(@conn, :index)} class="hover:text-gray-900 dark:hover:text-gray-200">Blog</.link></li>
           </ul>
         </nav>
       </header>

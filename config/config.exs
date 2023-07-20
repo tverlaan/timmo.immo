@@ -1,6 +1,7 @@
 import Config
 
 config :timmo, TimmoWeb.Endpoint,
+  adapter: Bandit.PhoenixAdapter,
   url: [host: "localhost", port: 7600],
   server: true,
   secret_key_base: "7xB4ha98N4270Azb0cZxX3BFtqG/0yBpY4jy7WwXvQ3DLbA8TCT1o+9sGV4XcHYU",

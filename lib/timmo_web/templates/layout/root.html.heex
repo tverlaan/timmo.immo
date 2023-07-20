@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= if Meta.assigned?(assigns), do: render(TimmoWeb.MetaView, "meta.html", assigns) %>
     <%= csrf_meta_tag() %>
-    <.live_title suffix=" · #{Timmo.name()}"><%= assigns[:page_title] || Timmo.title() %></.live_title>
+    <.live_title suffix={" · " <> Timmo.name()}><%= assigns[:page_title] || Timmo.title() %></.live_title>
     <link rel="alternate" type="application/atom+xml" href={Routes.site_path(@conn, :feed)} title="Timmo's feed" />
     <%= render("_icons.html", assigns) %>
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")} />
